@@ -1,0 +1,31 @@
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Shopping Management.exe.config
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Shopping Management.exe
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Shopping Management.pdb
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\MetroFramework.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping Management.csproj.AssemblyReference.cache
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping_Management.MainForm.resources
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping_Management.Properties.Resources.resources
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping Management.csproj.GenerateResource.cache
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping Management.csproj.CoreCompileInputs.cache
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping Management.exe
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping Management.pdb
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping_Management.SubForm_고객관리.resources
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping_Management.SubForm_상품관리.resources
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\obj\Debug\Shopping_Management.SubForm_주문관리.resources
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Auth.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Core.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Sheets.v4.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Newtonsoft.Json.dll
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.pdb
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.xml
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Auth.xml
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Core.pdb
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Core.xml
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Sheets.v4.pdb
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Google.Apis.Sheets.v4.xml
+C:\Users\KIM\source\repos\Shopping Management\Shopping Management\bin\Debug\Newtonsoft.Json.xml
