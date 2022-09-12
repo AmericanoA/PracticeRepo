@@ -62,7 +62,7 @@ namespace Shopping_Management
             //     request.Execute();
         }
 
-        public void DeleteToGS(string TargetSheet, List<object> rawdatalist, int paramcount)
+        public void ClearToGS(string TargetSheet, int paramcount , int dtrowcount)
         {
             //API CREATE
             var service = new SheetsService(new BaseClientService.Initializer()
@@ -70,19 +70,17 @@ namespace Shopping_Management
                 HttpClientInitializer = credential,
                 ApplicationName = ApplicationName,
             });
-            string sheetrange = string.Format("!{0}:{1}", Convert.ToChar(64 + 1), Convert.ToChar(64 + paramcount));
+            string sheetrange = string.Format("!{0}2:{1}{2}", Convert.ToChar(64 + 1), Convert.ToChar(64 + paramcount), dtrowcount);
             var range = TargetSheet + sheetrange;
+            List<string> ranges = new List<string>();  // TODO: Update placeholder value.
 
-            //var valueRange = new ValueRange()
-            //{
-            //    MajorDimension = "ROWS",                    // ROWS or COLUMNS
-            //    Values = new List<IList<object>> { rawdatalist } // 추가할 데이터
-            //};
+            ranges.Add(range);
+            Data.BatchClearValuesRequest requestBody = new Data.BatchClearValuesRequest();
+            requestBody.Ranges = ranges;
 
-            //           var request = service.Spreadsheets.Values.Append(valueRange, spreadsheetId, range);
-            //         request.InsertDataOption = SpreadsheetsResource.ValuesResource.AppendRequest.InsertDataOptionEnum.INSERTROWS;
-            //       request.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.RAW;
-            //     request.Execute();
+            SpreadsheetsResource.ValuesResource.BatchClearRequest request = service.Spreadsheets.Values.BatchClear(requestBody, spreadsheetId);
+            Data.BatchClearValuesResponse response = request.Execute();
+            Console.WriteLine(JsonConvert.SerializeObject(response));
         }
         public DataTable DownloadToGS(string TargetSheet, int paramcount, int searchcount)
         {

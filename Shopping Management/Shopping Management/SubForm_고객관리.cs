@@ -19,6 +19,7 @@ namespace Shopping_Management
         DataTable dtRemote = null;
         GoogleSpreadControl gsc = null;
         DTManger dtm = null;
+        GSSendDataList SendList = null;
         bool bEdit;
         int iEditRow;
 
@@ -33,6 +34,8 @@ namespace Shopping_Management
 
             dtLocal = new DataTable();
             dtRemote = new DataTable();
+            SendList = new GSSendDataList();
+
             dgv_고객관리.DefaultCellStyle.SelectionBackColor = Color.Gray;
         }
 
@@ -149,29 +152,39 @@ namespace Shopping_Management
 
         private void btnUPLOAD_Click(object sender, EventArgs e)
         {
-            int icompare = 0;
             if (dtLocal.Rows.Count == 0)
             {
                 MessageBox.Show("고객정보가 존재하지 않습니다.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            icompare = dtm.Compare_DataTable(dtRemote, dtLocal);
-            if (dtm.Compare_DataTable(dtRemote, dtLocal) == CompareInfo.RowDataEqual)
+            if (dtm.Compare_DataTable(dtRemote, dtLocal))
             {
                 MessageBox.Show("변경사항이 없습니다.", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (dtm.Compare_DataTable(dtRemote, dtLocal) == CompareInfo.RowCountNotEqual) 
+            else
+                SendList = dtm.GetSendDataList_DataTable("고객정보", dtRemote, dtLocal);
+
+        }
+
+        private void btnDELETE_Click(object sender, EventArgs e)
+        {
+            if (dgv_고객관리.SelectedRows.Count >= 1)
             {
-                // DELETE, APPEND 리스트 반환
-                dtm.Update_DataTable("고객정보", dtRemote, dtLocal);
+                int count = dgv_고객관리.SelectedRows.Count-1;
+                for (int i = count; i >= 0; i--)
+                {
+                    int index = dgv_고객관리.SelectedRows[i].Index;
+                    dtLocal.Rows.RemoveAt(index);
+                }
             }
-            if (dtm.Compare_DataTable(dtRemote, dtLocal) == CompareInfo.RowDataEqual)
-            {
-                // UPDATE 항목 반환
-                dtm.Update_DataTable("고객정보", dtRemote, dtLocal);
-            }
-            
+            else
+                MessageBox.Show("1개 이상의 행을 선택해 주세요", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnTEST_Click(object sender, EventArgs e)
+        {
+            gsc.ClearToGS("고객정보", 7 , dtRemote.Rows.Count);
         }
     }
 }

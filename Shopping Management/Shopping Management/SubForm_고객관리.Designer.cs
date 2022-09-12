@@ -46,6 +46,8 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.btnDELETE = new MetroFramework.Controls.MetroButton();
+            this.btnTEST = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_고객관리)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -54,6 +56,7 @@
             // dgv_고객관리
             // 
             this.dgv_고객관리.AllowUserToAddRows = false;
+            this.dgv_고객관리.AllowUserToDeleteRows = false;
             this.dgv_고객관리.AllowUserToResizeRows = false;
             this.dgv_고객관리.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_고객관리.BackgroundColor = System.Drawing.Color.AliceBlue;
@@ -82,6 +85,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnTEST);
+            this.groupBox4.Controls.Add(this.btnDELETE);
             this.groupBox4.Controls.Add(this.btnCOPY);
             this.groupBox4.Controls.Add(this.btnEDIT);
             this.groupBox4.Controls.Add(this.btnUPLOAD);
@@ -127,7 +132,7 @@
             // 
             // btnUPLOAD
             // 
-            this.btnUPLOAD.Location = new System.Drawing.Point(616, 123);
+            this.btnUPLOAD.Location = new System.Drawing.Point(6, 122);
             this.btnUPLOAD.Name = "btnUPLOAD";
             this.btnUPLOAD.Size = new System.Drawing.Size(114, 23);
             this.btnUPLOAD.TabIndex = 1;
@@ -230,6 +235,27 @@
             this.metroLabel10.TabIndex = 3;
             this.metroLabel10.Text = "이름";
             // 
+            // btnDELETE
+            // 
+            this.btnDELETE.Location = new System.Drawing.Point(616, 122);
+            this.btnDELETE.Name = "btnDELETE";
+            this.btnDELETE.Size = new System.Drawing.Size(114, 23);
+            this.btnDELETE.Style = MetroFramework.MetroColorStyle.Orange;
+            this.btnDELETE.TabIndex = 14;
+            this.btnDELETE.TabStop = false;
+            this.btnDELETE.Text = "DELETE";
+            this.btnDELETE.Click += new System.EventHandler(this.btnDELETE_Click);
+            // 
+            // btnTEST
+            // 
+            this.btnTEST.Location = new System.Drawing.Point(6, 93);
+            this.btnTEST.Name = "btnTEST";
+            this.btnTEST.Size = new System.Drawing.Size(114, 23);
+            this.btnTEST.TabIndex = 15;
+            this.btnTEST.TabStop = false;
+            this.btnTEST.Text = "TEST";
+            this.btnTEST.Click += new System.EventHandler(this.btnTEST_Click);
+            // 
             // SubForm_고객관리
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -270,5 +296,7 @@
         private MetroFramework.Controls.MetroButton btnEDIT;
         private MetroFramework.Controls.MetroButton btnUPLOAD;
         private MetroFramework.Controls.MetroButton btnCOPY;
+        private MetroFramework.Controls.MetroButton btnDELETE;
+        private MetroFramework.Controls.MetroButton btnTEST;
     }
 }
