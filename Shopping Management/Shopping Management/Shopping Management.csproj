@@ -148,6 +148,7 @@
   <ItemGroup>
     <Content Include="Logo.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\BrandLogo.png" />
     <None Include="Resources\주문관리.png" />
     <None Include="Resources\고객관리.png" />
     <None Include="Resources\상품관리.png" />

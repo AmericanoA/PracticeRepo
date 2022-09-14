@@ -35,8 +35,6 @@ namespace Shopping_Management
                 localDic.Add(sKey[i], localdt[i]);
             }
         }
-
-
     }
 
     public class ManageDataTable

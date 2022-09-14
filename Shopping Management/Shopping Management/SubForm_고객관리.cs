@@ -217,5 +217,10 @@ namespace Shopping_Management
             }
             MessageBox.Show("고객 정보 삭제 완료 되었습니다.", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void SubForm_고객관리_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

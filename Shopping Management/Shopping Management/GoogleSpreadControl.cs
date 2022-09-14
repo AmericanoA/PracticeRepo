@@ -112,7 +112,8 @@ namespace Shopping_Management
                     }
                 }
                 var maxcode = dt.dt.AsEnumerable().OrderByDescending(r => Convert.ToInt32(r.Field<string>("PK").ToString().Substring(1))).FirstOrDefault();
-                dt.iLastPK = Convert.ToInt32(maxcode["PK"].ToString().Substring(1));
+                if (maxcode != null)
+                    dt.iLastPK = Convert.ToInt32(maxcode["PK"].ToString().Substring(1));
             }
             return dt;
         }
@@ -131,7 +132,5 @@ namespace Shopping_Management
             SpreadsheetsResource.ValuesResource.BatchUpdateRequest request = service.Spreadsheets.Values.BatchUpdate(requestBody, spreadsheetId);
             Data.BatchUpdateValuesResponse response = request.Execute();
         }
-
-        
     }
 }

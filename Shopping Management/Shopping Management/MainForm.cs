@@ -25,7 +25,7 @@ namespace Shopping_Management
 
             db.remoteDic["고객정보"] = spreadapi.DownloadToGS("고객정보", 7, 500);
             db.remoteDic["상품정보"] = spreadapi.DownloadToGS("상품정보", 7, 500);
-            db.remoteDic["주문정보"] = spreadapi.DownloadToGS("주문정보", 7, 500);
+            db.remoteDic["주문정보"] = spreadapi.DownloadToGS("주문정보", 8, 500);
 
             if (db.remoteDic["고객정보"].dt.Columns.Count == 0)
             {
@@ -40,22 +40,23 @@ namespace Shopping_Management
             if (db.remoteDic["상품정보"].dt.Columns.Count == 0)
             {
                 db.remoteDic["상품정보"].dt.Columns.Add("PK");
-                db.remoteDic["상품정보"].dt.Columns.Add("이름");
-                db.remoteDic["상품정보"].dt.Columns.Add("ID");
-                db.remoteDic["상품정보"].dt.Columns.Add("전화번호");
-                db.remoteDic["상품정보"].dt.Columns.Add("주소");
-                db.remoteDic["상품정보"].dt.Columns.Add("구매사이트");
-                db.remoteDic["상품정보"].dt.Columns.Add("구매횟수");
+                db.remoteDic["상품정보"].dt.Columns.Add("제품명");
+                db.remoteDic["상품정보"].dt.Columns.Add("입고가");
+                db.remoteDic["상품정보"].dt.Columns.Add("출고가");
+                db.remoteDic["상품정보"].dt.Columns.Add("분류");
+                db.remoteDic["상품정보"].dt.Columns.Add("거래처");
+                db.remoteDic["상품정보"].dt.Columns.Add("재고");
             }
             if (db.remoteDic["주문정보"].dt.Columns.Count == 0)
             {
                 db.remoteDic["주문정보"].dt.Columns.Add("PK");
-                db.remoteDic["주문정보"].dt.Columns.Add("이름");
-                db.remoteDic["주문정보"].dt.Columns.Add("ID");
-                db.remoteDic["주문정보"].dt.Columns.Add("전화번호");
-                db.remoteDic["주문정보"].dt.Columns.Add("주소");
-                db.remoteDic["주문정보"].dt.Columns.Add("구매사이트");
-                db.remoteDic["주문정보"].dt.Columns.Add("구매횟수");
+                db.remoteDic["주문정보"].dt.Columns.Add("주문번호");
+                db.remoteDic["주문정보"].dt.Columns.Add("고객명");
+                db.remoteDic["주문정보"].dt.Columns.Add("품명");
+                db.remoteDic["주문정보"].dt.Columns.Add("수량");
+                db.remoteDic["주문정보"].dt.Columns.Add("판매가");
+                db.remoteDic["주문정보"].dt.Columns.Add("상태");
+                db.remoteDic["주문정보"].dt.Columns.Add("비고");
             }
             db.localDic["고객정보"].dt = db.remoteDic["고객정보"].dt.Copy();
             db.localDic["고객정보"].iLastPK = db.remoteDic["고객정보"].iLastPK;
@@ -67,7 +68,7 @@ namespace Shopping_Management
         }
         private void mtOrder_Click(object sender, EventArgs e)
         {
-            SubForm_주문관리 주문 = new SubForm_주문관리();
+            SubForm_주문관리 주문 = new SubForm_주문관리(db, spreadapi, manager);
             this.Hide();
             주문.ShowDialog();
             this.Show();
@@ -75,7 +76,7 @@ namespace Shopping_Management
 
         private void mtItem_Click(object sender, EventArgs e)
         {
-            SubForm_상품관리 상품 = new SubForm_상품관리();
+            SubForm_상품관리 상품 = new SubForm_상품관리(db, spreadapi, manager);
             this.Hide();
             상품.ShowDialog();
             this.Show();

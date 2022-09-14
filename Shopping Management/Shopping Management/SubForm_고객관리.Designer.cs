@@ -256,6 +256,7 @@
             this.Name = "SubForm_고객관리";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Black;
+            this.Load += new System.EventHandler(this.SubForm_고객관리_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_고객관리)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
